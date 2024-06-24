@@ -1,13 +1,9 @@
 {
-	"name": "oprem2datalake_table_list",
+	"name": "oprem_source_table",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "onprem_sql_server_connecton",
-			"type": "LinkedServiceReference",
-			"parameters": {
-				"Username": "shubham",
-				"Password": "Chicago@#2024"
-			}
+			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "SqlServerTable",
