@@ -1,0 +1,31 @@
+{
+	"name": "onprem_sql_server_connecton",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"Username": {
+				"type": "string",
+				"defaultValue": "shubham"
+			},
+			"Password": {
+				"type": "string",
+				"defaultValue": "Chicago@#2024"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "DESKTOP-K8PGTSP\\SQLEXPRESS",
+			"database": "AdventureWorks2022",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "Windows",
+			"userName": "@{linkedService().Username}",
+			"password": "@{linkedService().Password}"
+		},
+		"connectVia": {
+			"referenceName": "selfhosted",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
