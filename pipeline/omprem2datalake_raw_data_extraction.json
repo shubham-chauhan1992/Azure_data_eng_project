@@ -38,7 +38,7 @@
 								"source": {
 									"type": "SqlServerSource",
 									"sqlReaderQuery": {
-										"value": "@concat('select * from ' , item().table_name)",
+										"value": "@concat('select * from ' ,item().schema_name,'.', item().table_name)",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
@@ -100,7 +100,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
-						"sqlReaderQuery": "select upper(name) as table_name from sys.tables",
+						"sqlReaderQuery": "select b.name as schema_name ,a.table_name from  sys.schemas b inner join (select name as table_name,schema_id from sys.tables where schema_id in (5,6,7,8) ) a \non a.schema_id=b.schema_id;",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},

@@ -8,6 +8,9 @@
 		"parameters": {
 			"table_name": {
 				"type": "string"
+			},
+			"schema_name": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -16,7 +19,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"folderPath": {
-					"value": "@dataset().table_name",
+					"value": "@concat(dataset().schema_name,'/',dataset().table_name)",
 					"type": "Expression"
 				},
 				"fileSystem": "bronze"
