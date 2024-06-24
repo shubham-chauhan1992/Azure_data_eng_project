@@ -71,7 +71,13 @@
 							"outputs": [
 								{
 									"referenceName": "copy_raw_dataset_tgt_deatils",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"table_name": {
+											"value": "@item().table_name",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
