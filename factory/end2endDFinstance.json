@@ -1,0 +1,9 @@
+{
+	"name": "end2endDFinstance",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e637169f-27da-4795-8cad-8f1ca68b4307",
+		"tenantId": "b42c5bcc-de30-4d55-b3db-ce032ea87a5a"
+	}
+}
