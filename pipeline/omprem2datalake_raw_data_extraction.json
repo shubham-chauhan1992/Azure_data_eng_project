@@ -61,6 +61,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
+						"sqlReaderQuery": "select upper(name) from sys.tables",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
