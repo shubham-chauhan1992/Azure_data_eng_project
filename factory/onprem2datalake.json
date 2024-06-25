@@ -1,0 +1,9 @@
+{
+	"name": "onprem2datalake",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ac0ed469-662b-4295-9eab-c5d1004318f2",
+		"tenantId": "b42c5bcc-de30-4d55-b3db-ce032ea87a5a"
+	}
+}
