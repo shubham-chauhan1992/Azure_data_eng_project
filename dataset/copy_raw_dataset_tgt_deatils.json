@@ -11,6 +11,9 @@
 			},
 			"schema_name": {
 				"type": "string"
+			},
+			"container_name": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -22,7 +25,10 @@
 					"value": "@concat(dataset().schema_name,'/',dataset().table_name)",
 					"type": "Expression"
 				},
-				"fileSystem": "bronze"
+				"fileSystem": {
+					"value": "@dataset().container_name",
+					"type": "Expression"
+				}
 			},
 			"compressionCodec": "snappy"
 		},
