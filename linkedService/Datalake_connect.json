@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "https://onprem2rawbronzelayer.dfs.core.windows.net/"
+			"url": "https://datalakelearningprj.dfs.core.windows.net/"
 		}
 	}
 }
