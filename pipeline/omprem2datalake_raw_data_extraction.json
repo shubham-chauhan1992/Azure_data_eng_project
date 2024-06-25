@@ -80,7 +80,8 @@
 										"schema_name": {
 											"value": "@item().schema_name",
 											"type": "Expression"
-										}
+										},
+										"container_name": "bronzelayer"
 									}
 								}
 							]
