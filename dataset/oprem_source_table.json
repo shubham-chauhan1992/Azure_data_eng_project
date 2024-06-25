@@ -3,7 +3,11 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "onprem_sql_server_connecton",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"Username": "shubham",
+				"Password": "Chicago@#2024"
+			}
 		},
 		"annotations": [],
 		"type": "SqlServerTable",
