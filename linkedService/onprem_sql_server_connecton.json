@@ -24,7 +24,7 @@
 			"password": "@{linkedService().Password}"
 		},
 		"connectVia": {
-			"referenceName": "selfhosted",
+			"referenceName": "integrationRuntime1",
 			"type": "IntegrationRuntimeReference"
 		}
 	}
