@@ -1,0 +1,141 @@
+{
+	"name": "adfcdc1",
+	"properties": {
+		"SourceConnectionsInfo": [
+			{
+				"SourceEntities": [
+					{
+						"name": "SalesLT.Customer",
+						"properties": {
+							"schema": [],
+							"dslConnectorProperties": [
+								{
+									"name": "schemaName",
+									"value": "SalesLT"
+								},
+								{
+									"name": "tableName",
+									"value": "Customer"
+								},
+								{
+									"name": "enableCdc",
+									"value": true
+								},
+								{
+									"name": "waterMarkColumn",
+									"value": "ModifiedDate"
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "onprem_sql_server_connecton",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureSqlDatabase",
+					"type": "linkedservicetype",
+					"isInlineDataset": true,
+					"commonDslConnectorProperties": [
+						{
+							"name": "allowSchemaDrift",
+							"value": true
+						},
+						{
+							"name": "inferDriftedColumnTypes",
+							"value": true
+						},
+						{
+							"name": "format",
+							"value": "table"
+						},
+						{
+							"name": "store",
+							"value": "sqlserver"
+						},
+						{
+							"name": "databaseType",
+							"value": "databaseType"
+						},
+						{
+							"name": "database",
+							"value": "database"
+						},
+						{
+							"name": "skipInitialLoad",
+							"value": true
+						}
+					]
+				}
+			}
+		],
+		"TargetConnectionsInfo": [
+			{
+				"TargetEntities": [
+					{
+						"name": "landingzone",
+						"properties": {
+							"schema": [],
+							"dslConnectorProperties": [
+								{
+									"name": "container",
+									"value": "landingzone"
+								},
+								{
+									"name": "fileSystem",
+									"value": "landingzone"
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "Onprem2cloud",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureBlobFS",
+					"type": "linkedservicetype",
+					"isInlineDataset": true,
+					"commonDslConnectorProperties": [
+						{
+							"name": "allowSchemaDrift",
+							"value": true
+						},
+						{
+							"name": "inferDriftedColumnTypes",
+							"value": true
+						},
+						{
+							"name": "format",
+							"value": "parquet"
+						}
+					]
+				},
+				"DataMapperMappings": [
+					{
+						"targetEntityName": "landingzone",
+						"sourceEntityName": "SalesLT.Customer",
+						"sourceConnectionReference": {
+							"connectionName": "onprem_sql_server_connecton",
+							"type": "linkedservicetype"
+						},
+						"attributeMappingInfo": {
+							"attributeMappings": []
+						}
+					}
+				],
+				"Relationships": []
+			}
+		],
+		"Policy": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 30
+			},
+			"mode": "Microbatch"
+		},
+		"allowVNetOverride": false
+	}
+}
