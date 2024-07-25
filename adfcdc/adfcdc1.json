@@ -74,7 +74,7 @@
 			{
 				"TargetEntities": [
 					{
-						"name": "landingzone",
+						"name": "landingzone/Customer_id",
 						"properties": {
 							"schema": [],
 							"dslConnectorProperties": [
@@ -85,6 +85,10 @@
 								{
 									"name": "fileSystem",
 									"value": "landingzone"
+								},
+								{
+									"name": "folderPath",
+									"value": "Customer_id"
 								}
 							]
 						}
@@ -115,7 +119,7 @@
 				},
 				"DataMapperMappings": [
 					{
-						"targetEntityName": "landingzone",
+						"targetEntityName": "landingzone/Customer_id",
 						"sourceEntityName": "SalesLT.Customer",
 						"sourceConnectionReference": {
 							"connectionName": "onprem_sql_server_connecton",
