@@ -1,0 +1,69 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "onprem2cloud_alt",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"CONTAINER_NM": {
+				"type": "string",
+				"defaultValue": "landingzone"
+			},
+			"DIRECTORY_NM": {
+				"type": "string",
+				"defaultValue": "customer"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "crm_data_1gb.csv",
+				"folderPath": {
+					"value": "@dataset().DIRECTORY_NM",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().CONTAINER_NM",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "CustomerID",
+				"type": "String"
+			},
+			{
+				"name": "FirstName",
+				"type": "String"
+			},
+			{
+				"name": "LastName",
+				"type": "String"
+			},
+			{
+				"name": "Email",
+				"type": "String"
+			},
+			{
+				"name": "PhoneNumber",
+				"type": "String"
+			},
+			{
+				"name": "DateOfBirth",
+				"type": "String"
+			},
+			{
+				"name": "JoinDate",
+				"type": "String"
+			}
+		]
+	}
+}
