@@ -1,10 +1,16 @@
 {
 	"name": "onprem2cloud_alt",
 	"properties": {
+		"parameters": {
+			"strg_act_nm": {
+				"type": "string",
+				"defaultValue": "https://onprem2cloud.dfs.core.windows.net"
+			}
+		},
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "https://onprem2cloud.dfs.core.windows.net"
+			"url": "@{linkedService().strg_act_nm}"
 		}
 	}
 }
