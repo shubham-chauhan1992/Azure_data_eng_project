@@ -23,10 +23,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@formatDateTime(utcNow(), 'dd-MMM-yyyy')",
-					"type": "Expression"
-				},
 				"folderPath": {
 					"value": "@dataset().DIR_NM",
 					"type": "Expression"
