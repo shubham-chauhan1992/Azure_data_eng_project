@@ -1,0 +1,40 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "onprem2cloud_alt",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"CONTAINER_NM": {
+				"type": "string",
+				"defaultValue": "silver"
+			},
+			"DIR_NM": {
+				"type": "string",
+				"defaultValue": "customer"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@formatDateTime(utcNow(), 'dd-MMM-yyyy')",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().DIR_NM",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().CONTAINER_NM",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
