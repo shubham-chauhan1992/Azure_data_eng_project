@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "crm",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "onprem2cloud_alt",
