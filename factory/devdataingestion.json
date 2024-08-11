@@ -1,0 +1,12 @@
+{
+	"name": "devdataingestion",
+	"properties": {
+		"globalParameters": {
+			"storage_act_nm": {
+				"type": "string",
+				"value": "https://onprem2cloud.dfs.core.windows.net"
+			}
+		}
+	},
+	"location": "eastus"
+}
