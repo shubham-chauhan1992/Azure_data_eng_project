@@ -3,7 +3,10 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "onprem2cloud_alt",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"strg_act_nm": "https://onprem2cloud.dfs.core.windows.net"
+			}
 		},
 		"parameters": {
 			"CONTAINER_NM": {
