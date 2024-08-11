@@ -1,0 +1,9 @@
+{
+	"name": "devdataingestion",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bb390793-dee7-49d3-ab7b-23ae1b02f50e",
+		"tenantId": "b42c5bcc-de30-4d55-b3db-ce032ea87a5a"
+	}
+}
