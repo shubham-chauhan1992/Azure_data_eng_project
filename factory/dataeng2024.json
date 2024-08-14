@@ -1,0 +1,9 @@
+{
+	"name": "dataeng2024",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c6bb53e5-c5e6-412c-baeb-599564ca796f",
+		"tenantId": "b42c5bcc-de30-4d55-b3db-ce032ea87a5a"
+	}
+}
